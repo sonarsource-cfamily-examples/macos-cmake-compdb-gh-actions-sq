@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
     env:
       SONAR_SCANNER_VERSION: 4.6.1.2450 # Find the latest version in the "MacOS" link on this page:
-                                        # https://sonarcloud.io/documentation/analysis/scan/sonarscanner/
+                                        # https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/
       SONAR_SERVER_URL: "https://sonarcloud.io"
     steps:
       - uses: actions/checkout@v2
