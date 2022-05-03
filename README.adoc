@@ -1,36 +1,37 @@
-= C++ example project scanned on SonarCloud using compilation database (compile_commands.json)
+= C++ example project scanned on SonarQube using compilation database (compile_commands.json)
 // URIs:
-:uri-qg-status: https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sc
-:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sc&metric=alert_status
-:uri-build-status: https://github.com/sonarsource-cfamily-examples/macos-cmake-compdb-gh-actions-sc/actions/workflows/build.yml
-:img-build-status: https://github.com/sonarsource-cfamily-examples/macos-cmake-compdb-gh-actions-sc/actions/workflows/build.yml/badge.svg
+:uri-qg-status: https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq
+:img-qg-status: https://next.sonarqube.com/sonarqube/api/project_badges/measure?project=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sqmetric=alert_status&token=squ_a0683d6d23bc3fa8b93a6befc840c774511333cc
+:uri-build-status: https://github.com/sonarsource-cfamily-examples/macos-cmake-compdb-gh-actions-sq/actions/workflows/build.yml
+:img-build-status: https://github.com/sonarsource-cfamily-examples/macos-cmake-compdb-gh-actions-sq/actions/workflows/build.yml/badge.svg
 
 image:{img-build-status}[Build Status, link={uri-build-status}]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
-*This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sc[SonarCloud]!*
+*This project is analysed on https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq[SonarQube]!*
 
 :note-caption: :information_source:
-NOTE: This simple example ignores https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[analysis cache] and https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[multithreaded execution] both of which can boost analysis significantly.
+NOTE: This simple example ignores https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[analysis cache] and https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-9[multithreaded execution] both of which can boost analysis significantly.
 
-It is very easy to analyze a C, C++ and Objective-C project with SonarCloud and https://docs.sonarcloud.io/getting-started/github/[GitHub Actions] using compilation database:
+It is very easy to analyze a C, C++ and Objective-C project with SonarQube using compilation database:
 
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.github/workflows/build.yml` file:
-.. Download the https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/[Sonar Scanner]
+.. Set the environment variable `SONAR_HOST_URL` to your server url (e.g.: https://example.com:9000)
+.. Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
 .. Generate the compilation database file (set `CMAKE_EXPORT_COMPILE_COMMANDS` to `ON`)
 .. Run `sonar-scanner` with the property `sonar.cfamily.compile-commands` set to your compilation database file
-. Make sure that you have your token stored as a secret in your repository (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
+. Make sure that you have your token stored as a secret in your repository (`SONAR_TOKEN`). If you don't have a token yet, you can generate a new one in SonarQube (see https://docs.sonarqube.org/latest/user-guide/user-token/[Generating and Using Tokens]).
 
 You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.github/workflows/build.yml[build.yml] to see it in practice.
 
 = Documentation
 
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-compilation-database[Using compilation database (compile_commands.json)]
-- https://docs.sonarcloud.io/getting-started/github/[Documentation of using SonarCloud with GitHub]
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#parallel-code-scan[Configuring multithreaded execution]
-- https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-6[Using compilation database (compile_commands.json)]
+- https://docs.sonarqube.org/latest/analysis/github-integration/[GitHub Integration in SonarQube]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[Configuring C, C++ and Objective-C analysis cache]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-9[Configuring multithreaded execution]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 
 = MacOS\CMake
 
