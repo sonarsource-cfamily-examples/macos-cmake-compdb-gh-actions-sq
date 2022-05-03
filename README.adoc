@@ -1,14 +1,14 @@
 = C++ example project scanned on SonarQube using compilation database (compile_commands.json)
 // URIs:
-:uri-qg-status: https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK
-:img-qg-status: https://next.sonarqube.com/sonarqube/api/project_badges/measure?project=sonarsource-cfamily-examples_sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK&metric=alert_status&token=squ_a0683d6d23bc3fa8b93a6befc840c774511333cc
+:uri-qg-status: https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK
+:img-qg-status: https://next.sonarqube.com/sonarqube/api/project_badges/measure?project=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK&metric=alert_status&token=squ_a0683d6d23bc3fa8b93a6befc840c774511333cc
 :uri-build-status: https://github.com/sonarsource-cfamily-examples/macos-cmake-compdb-gh-actions-sq/actions/workflows/build.yml
 :img-build-status: https://github.com/sonarsource-cfamily-examples/macos-cmake-compdb-gh-actions-sq/actions/workflows/build.yml/badge.svg
 
 image:{img-build-status}[Build Status, link={uri-build-status}]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
-*This project is analysed on https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK[SonarQube]!*
+*This project is analysed on https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK[SonarQube]!*
 
 :note-caption: :information_source:
 NOTE: This simple example ignores https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[analysis cache] and https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-9[multithreaded execution] both of which can boost analysis significantly.
