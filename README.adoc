@@ -21,7 +21,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube using
 .. Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
 .. Generate the compilation database file (set `CMAKE_EXPORT_COMPILE_COMMANDS` to `ON`)
 .. Run `sonar-scanner` with the property `sonar.cfamily.compile-commands` set to your compilation database file
-. Make sure that you have your token stored as a secret in your repository (`SONAR_TOKEN`). If you don't have a token yet, you can generate a new one in SonarQube (see https://docs.sonarqube.org/latest/user-guide/user-token/[Generating and Using Tokens]).
+. Ensure that your token is stored as a secret in your repository (`SONARQUBE_TOKEN` in this example project). If you don't have a token yet, you can generate a new one in SonarQube (see https://docs.sonarqube.org/latest/user-guide/user-token/[Generating and Using Tokens]).
 
 You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.github/workflows/build.yml[build.yml] to see it in practice.
 
