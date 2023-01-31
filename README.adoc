@@ -10,8 +10,6 @@ image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
 *This project is analysed on https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK[SonarQube]!*
 
-:note-caption: :information_source:
-NOTE: This simple example ignores https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[analysis cache] and https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-9[multithreaded execution] both of which can boost analysis significantly.
 
 It is very easy to analyze a C, C++ and Objective-C project with SonarQube using compilation database:
 
@@ -27,15 +25,15 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-6[Using compilation database (compile_commands.json)]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#using-compilation-database[Using compilation database (compile_commands.json)]
 - https://docs.sonarqube.org/latest/analysis/github-integration/[GitHub Integration in SonarQube]
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-9[Configuring multithreaded execution]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#parallel-code-scan[Configuring multithreaded execution]
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 
-= MacOS\CMake
+= macOS\CMake
 
-A build of the https://github.com/sonarsource-cfamily-examples/code[code repository] on a MacOS platform using CMake build system.
+A build of the https://github.com/sonarsource-cfamily-examples/code[code repository] on a macOS platform using CMake build system.
 
 To build the code run:
 ----
@@ -46,7 +44,7 @@ make
 
 = Code Description
 
-An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
+An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, macOS, and Windows.
 
 The https://github.com/sonarsource-cfamily-examples/code[code repository] is forked into other repositories in https://github.com/sonarsource-cfamily-examples[this collection] to add a specific build system, platform, and CI.
 The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
@@ -54,7 +52,7 @@ The downstream repositories are analyzed either with https://www.sonarqube.org/[
 You can find examples for:
 
 * https://github.com/sonarsource-cfamily-examples?q=linux[Linux]
-* https://github.com/sonarsource-cfamily-examples?q=macos[MacOS]
+* https://github.com/sonarsource-cfamily-examples?q=macos[macOS]
 * https://github.com/sonarsource-cfamily-examples?q=windows[Windows]
 
 Using the following build systems:
