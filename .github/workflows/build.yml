@@ -17,7 +17,7 @@ jobs:
         run: |
           mkdir build
           cmake -S . -B build
-      - name: Install sonar-scanner and build-wrapper # TODO: I don't need build-wrapper
+      - name: Install sonar-scanner
         uses: sonarsource/sonarqube-github-c-cpp@v1
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
