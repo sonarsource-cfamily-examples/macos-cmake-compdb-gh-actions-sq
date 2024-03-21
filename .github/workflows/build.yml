@@ -22,7 +22,7 @@ jobs:
           mkdir build
           cmake -S . -B build
       - name: Run sonar-scanner
-        env: 
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
