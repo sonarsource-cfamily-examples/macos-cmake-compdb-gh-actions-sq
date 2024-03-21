@@ -16,7 +16,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube using
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.github/workflows/build.yml` file:
 .. Set the environment variable `SONAR_HOST_URL` to your server url (e.g.: https://example.com:9000)
-.. Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
+.. Download the Sonar Scanner using https://github.com/SonarSource/sonarqube-github-c-cpp[the SonarQube Scan for C and C++ Github Action]
 .. Generate the compilation database file (set `CMAKE_EXPORT_COMPILE_COMMANDS` to `ON`)
 .. Run `sonar-scanner` with the property `sonar.cfamily.compile-commands` set to your compilation database file
 . Ensure that your token is stored as a secret in your repository (`SONARQUBE_TOKEN` in this example project). If you don't have a token yet, you can generate a new one in SonarQube (see https://docs.sonarqube.org/latest/user-guide/user-token/[Generating and Using Tokens]).
