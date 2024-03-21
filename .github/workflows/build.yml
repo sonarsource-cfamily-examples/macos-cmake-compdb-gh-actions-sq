@@ -16,7 +16,7 @@ jobs:
       - name: Install sonar-scanner
         uses: sonarsource/sonarqube-github-c-cpp@v1
         env:
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} # SonarQube URL is stored in a GitHub secret
       - name: Generate compilation database
         run: |
           mkdir build
@@ -25,5 +25,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} # SonarQube URL is stored in a GitHub secret
         run: sonar-scanner --define sonar.cfamily.compile-commands=build/compile_commands.json
