@@ -25,11 +25,10 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#using-compilation-database[Using compilation database (compile_commands.json)]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation overview of the C, C++ and Objective-C analyzer]
 - https://docs.sonarqube.org/latest/analysis/github-integration/[GitHub Integration in SonarQube]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#parallel-code-scan[Configuring multithreaded execution]
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/prerequisites/#generating-a-compilation-database[Generating a compilation database (compile_commands.json)]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/running-the-analysis/[Running the analysis in Compilation Database mode]
 
 = macOS\CMake
 
