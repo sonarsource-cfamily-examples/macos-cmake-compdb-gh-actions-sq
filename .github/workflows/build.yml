@@ -24,4 +24,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} # SonarQube URL is stored in a GitHub secret
-        run: DYLD_PRINT_LIBRARIES=1 sonar-scanner --define sonar.cfamily.compile-commands=build/compile_commands.json
+        run: |
+          export DYLD_PRINT_OPTS="1"
+          export DYLD_PRINT_ENV="1"
+          export DYLD_PRINT_LIBRARIES="1"
+          export DYLD_PRINT_LIBRARIES_POST_LAUNCH="1"
+          export DYLD_PRINT_APIS="1"
+          export DYLD_PRINT_BINDINGS="1"
+          export DYLD_PRINT_INITIALIZERS="1"
+          export DYLD_PRINT_REBASINGS="1"
+          export DYLD_PRINT_SEGMENTS="1"
+          export DYLD_PRINT_STATISTICS="1"
+          export DYLD_PRINT_DOFS="1"
+          export DYLD_PRINT_RPATHS="1"
+          sonar-scanner --define sonar.cfamily.compile-commands=build/compile_commands.json
