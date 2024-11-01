@@ -1,8 +1,6 @@
 name: Build
 on:
   push:
-    branches:
-      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -26,4 +24,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} # SonarQube URL is stored in a GitHub secret
-        run: sonar-scanner --define sonar.cfamily.compile-commands=build/compile_commands.json
+        run: DYLD_PRINT_LIBRARIES=1 sonar-scanner --define sonar.cfamily.compile-commands=build/compile_commands.json
