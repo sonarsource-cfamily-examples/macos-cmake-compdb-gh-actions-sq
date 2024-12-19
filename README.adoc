@@ -1,4 +1,4 @@
-= C++ example project scanned on SonarQube using compilation database (compile_commands.json)
+= C++ example project scanned on SonarQube Server using compilation database (compile_commands.json)
 // URIs:
 :uri-qg-status: https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK
 :img-qg-status: https://next.sonarqube.com/sonarqube/api/project_badges/measure?project=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK&metric=alert_status&token=squ_a0683d6d23bc3fa8b93a6befc840c774511333cc
@@ -8,7 +8,7 @@
 image:{img-build-status}[Build Status, link={uri-build-status}]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
-*This project is analysed on https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK[SonarQube]!*
+*This project is analysed on https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_macos-cmake-compdb-gh-actions-sq_AYCKCNO5nBwJQJjdVHcK[SonarQube Server]!*
 
 
 It is very easy to analyze a C, C++ and Objective-C project with SonarQube using compilation database:
@@ -16,19 +16,18 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube using
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.github/workflows/build.yml` file:
 .. Set the environment variable `SONAR_HOST_URL` to your server url (e.g.: https://example.com:9000)
-.. Download the Sonar Scanner using https://github.com/SonarSource/sonarqube-github-c-cpp[the SonarQube Scan for C and C++ Github Action]
 .. Generate the compilation database file (set `CMAKE_EXPORT_COMPILE_COMMANDS` to `ON`)
-.. Run `sonar-scanner` with the property `sonar.cfamily.compile-commands` set to your compilation database file
-. Ensure that your token is stored as a secret in your repository (`SONARQUBE_TOKEN` in this example project). If you don't have a token yet, you can generate a new one in SonarQube (see https://docs.sonarqube.org/latest/user-guide/user-token/[Generating and Using Tokens]).
+.. Run the SonarQube scan using https://github.com/SonarSource/sonarqube-scan-action[the SonarSource/sonarqube-scan-action action] with the property `sonar.cfamily.compile-commands` set to your compilation database file
+. Ensure that your token is stored as a secret in your repository (`SONARQUBE_TOKEN`  in this example project). If you don't have a token yet, you can generate a new one in SonarQube Server (see https://docs.sonarsource.com/sonarqube-server/latest/user-guide/managing-tokens/[Managing your tokens]).
 
 You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.github/workflows/build.yml[build.yml] to see it in practice.
 
 = Documentation
 
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation overview of the C, C++ and Objective-C analyzer]
-- https://docs.sonarqube.org/latest/analysis/github-integration/[GitHub Integration in SonarQube]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/prerequisites/#generating-a-compilation-database[Generating a compilation database (compile_commands.json)]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/running-the-analysis/[Running the analysis in Compilation Database mode]
+- https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/languages/c-family/overview/[C/C++/Objective-C analysis overview]
+- https://docs.sonarsource.com/sonarqube-server/latest/devops-platform-integration/github-integration/introduction/[GitHub Integration]
+- https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/languages/c-family/prerequisites/#generating-a-compilation-database[Generating a compilation database]
+- https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/languages/c-family/running-the-analysis/[Running the CFamily analysis]
 
 = macOS\CMake
 
@@ -46,7 +45,7 @@ make
 An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, macOS, and Windows.
 
 The https://github.com/sonarsource-cfamily-examples/code[code repository] is forked into other repositories in https://github.com/sonarsource-cfamily-examples[this collection] to add a specific build system, platform, and CI.
-The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
+The downstream repositories are analyzed either with https://www.sonarsource.com/products/sonarqube/[SonarQube Server] or https://www.sonarsource.com/products/sonarcloud/[SonarQube Cloud].
 
 You can find examples for:
 
@@ -73,8 +72,8 @@ Running on the following CI services:
 
 Configured for analysis on:
 
-* https://github.com/sonarsource-cfamily-examples?q=-sq[SonarQube]
-* https://github.com/sonarsource-cfamily-examples?q=-sc[SonarCloud]
+* https://github.com/sonarsource-cfamily-examples?q=-sq[SonarQube Server]
+* https://github.com/sonarsource-cfamily-examples?q=-sc[SonarQube Cloud]
 
 You can find also a few examples demonstrating:
 
